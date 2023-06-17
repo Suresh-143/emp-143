@@ -1,0 +1,38 @@
+#%RAML 1.0 DataType 
+type: object
+properties:
+  emp_name:
+    type: string
+    example: reddy suresh
+    required: false
+  emp-id:
+    type: integer
+    example: 1546
+    required: false
+  emp-age:
+    type: integer
+    example: 26
+    required: false
+  emp-salary:
+    type: integer
+    example: 85000
+    required: false
+  emp-address:
+    type: string
+    example: America
+    required: false
+  email:
+    type: string
+    example: reddyjka@gmail.com
+    required: false
+  emp_Phone:
+    type: integer
+    example: 789652310
+    required: false
+  gender:
+    type: string
+    enum:
+      [ Male,Female,Transzender ]
+
+example: !include ../example/post-example.json
+  

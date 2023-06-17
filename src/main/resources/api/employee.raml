@@ -1,0 +1,48 @@
+#%RAML 1.0
+title: employee
+version: v1
+types:
+  oneParam:
+    properties:
+      field1:
+        description: field1
+        required: false
+        type: string
+      field3:
+        description: field3
+        type: string
+  otherParam:
+    properties:
+      field1:
+        description: field1
+        required: false
+        type: string
+      field2:
+        description: field2
+        type: string
+/employees:
+  description: to perform on employee data
+  displayName: perform on employee data
+  post:
+    body:
+      application/json:
+        type: !include /datatype/post-dataType.raml
+    responses:
+      201:
+        body:
+          application/json:
+            example:
+              {
+                "message": "employee data successfully created"
+              }
+  get:
+    queryString:
+      type: oneParam | otherParam
+    responses:
+      200:
+        body:
+          application/json:
+            type: !include /datatype/post-dataType.raml
+              
+      
+    
